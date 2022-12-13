@@ -12,7 +12,6 @@ valid - {{form.valid}}
 
 <form [formGroup]="form">
 
-
     <div *ngFor="let student of details.controls; index as i">
       <app-child [formGroupName]="'details'" [index]="i"></app-child>
     </div>

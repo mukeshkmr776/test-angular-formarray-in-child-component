@@ -16,20 +16,15 @@ export class ChildComponent {
     private rootFormGroup: FormGroupDirective,
   ) {}
 
-  get studentFormGetter() {
-    return (this.rootFormGroup.control.get(this.formGroupName) as FormArray).at(this.index);
-  }
-
   get getRawValue() {
     return this.studentForm.getRawValue();
   }
 
   ngOnInit() {
     this.studentForm = (this.rootFormGroup.control.get(this.formGroupName) as FormArray).at(this.index) as FormGroup;
-    // console.log('studentForm-', this.studentForm);
   }
 
   show() {
-    console.log(`studentForm[${this.index}].getRawValue - `, this.getRawValue);
+    console.log(`studentForm[${this.index}] - `, this.studentForm);
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 interface Student {
   name: string;
@@ -37,8 +37,8 @@ export class AppComponent {
 
   createStudent(item: Student) {
     return this.formBuilder.group({
-      name: new FormControl(item.name, [Validators.required]),
-      country: new FormControl(item.country, []),
+      name: [item.name, [Validators.required]],
+      country: [item.country, []]
     })
   }
 
