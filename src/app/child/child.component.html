@@ -1,0 +1,10 @@
+<p>child works! student-{{getRawValue | json}}</p>
+
+<form *ngIf="studentForm" [formGroup]="studentForm">
+    <input formControlName="name" placeholder="Name" [ngClass]="{'error': !!studentForm.controls['name'].invalid}"/>
+    &nbsp;
+    <input formControlName="country" placeholder="Country"/>
+    &nbsp;
+    <button (click)="show()">Show</button>
+</form>
+<br>

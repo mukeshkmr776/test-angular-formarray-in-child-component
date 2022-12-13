@@ -1,0 +1,20 @@
+hello world
+<button (click)="show()">Show All</button>
+&nbsp;
+<button (click)="addStudent()">Add Student</button>
+<br>
+data - {{formRawValue | json}}
+<br>
+valid - {{form.valid}}
+<br>
+<br>
+
+
+<form [formGroup]="form">
+
+
+    <div *ngFor="let student of details.controls; index as i">
+      <app-child [formGroupName]="'details'" [index]="i"></app-child>
+    </div>
+
+</form>
